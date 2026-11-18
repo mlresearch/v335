@@ -1,0 +1,384 @@
+% LOCAL EDITORIAL DRAFT. Do not publish until editor approval.
+% Identified title, author, and abstract discrepancies were resolved using the corresponding paper PDFs.
+% Page ranges follow website order and physical PDF lengths provisionally.
+
+@Proceedings{STAI-X-2026,
+  booktitle = {Proceedings of the First Conference on Statistics and Trustworthy {AI} for Cross (X)-Domain Acceleration},
+  name = {Conference on Statistics and Trustworthy {AI} for Cross (X)-Domain Acceleration},
+  shortname = {STAI-X},
+  editor = {Zheng, Tian and Zhang, Linjun},
+  volume = {335},
+  year = {2026},
+  start = {2026-08-01},
+  end = {2026-08-01},
+  address = {Harvard University, Cambridge, MA, USA},
+  conference_url = {https://statsupai.org/STAIX2026/},
+  conference_number = {1}
+}
+
+% Submission 19. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{ramchandran26,
+  title = {{Cross-Cluster Weighted Forests}},
+  author = {Ramchandran, Maya and Mukherjee, Rajarshi and Parmigiani, Giovanni},
+  pages = {1--26},
+  abstract = {Building trustworthy machine learning algorithms for biological applications requires adapting to data heterogeneity from different sources, batches, distributions, or studies. We propose the Cross-Cluster Weighted Forest (CCWF), an ensembling approach that explicitly leverages heterogeneity in the feature distribution to produce more accurate and more generalizable predictors than the standard Random Forest in cases when data can be naturally clustered. CCWF generalizes the RF architecture to an outer unsupervised layer, supervised subtasks, and ensembling. Specifically it involves unsupervised clustering of the training data, fitting a Random Forest on each cluster, and combining the forests via stacked regression weights that reward cross-cluster generalizability. We provide a theoretical analysis of an analytically tractable forest model showing that cluster-based ensembling is asymptotically more accurate than training a single forest on the full data, with the gain driven by bias reduction. In simulations, we find that CCWF is robust across data-generating regimes and outcome models; furthermore, we explore the influence of data partitioning and ensemble weighting strategies on the benefits of our method. Finally, we apply our approach to cancer molecular profiling and gene expression datasets that are naturally divisible into clusters; in both simulations and real data examples, we illustrate that our approach outperforms classic Random Forest by margins of 30-40\%, aligning with our theoretical results. Overall, we show that CCWF provides a statistically grounded prediction algorithm for data spanning multiple domains or sub-populations, a structure common in biological applications.},
+  openreview = {92ZpOUQwKh},
+  software = {https://github.com/m-ramchandran/cross-cluster/tree/main}
+}
+
+% Submission 21. Publication metadata verified against PDF.
+@InProceedings{danning26,
+  title = {{{SEEK}-{VEC}: Augmenting topic modeling with spectral ensemble learning}},
+  author = {Danning, Rebecca and Ke, Zheng Tracy and Ma, Rong and Lin, Xihong},
+  pages = {27--39},
+  abstract = {Count data are ubiquitous across many applications in which understanding latent patterns is of interest. Topic modeling is a powerful tool for detecting latent structure in count data. However, standard topic modeling methods are often constrained by their restrictive assumptions, susceptible to noise, and sensitive to misspecification of the number of topics. Here, we introduce SEEK-VEC (Spectral Ensembling of topic models with Eigenscore for K-agnostic Vocabulary Embedding and Classification), an ensemble topic modeling framework that integrates insights from multiple candidate topic models through a spectral ensembling procedure. SEEK-VEC produces a meta-structure matrix containing prioritization scores and grouping scores that enable variable classification, interactive pattern discovery, and model diagnostics. Through simulations, we demonstrate that SEEK-VEC augments the performance of standard topic models for identifying important vocabulary words and understanding the relationships among them, particularly when signal strength is weak. We apply SEEK-VEC to the MADStat dataset of statistical abstracts and demonstrate its utility for evaluating the proposed interpretation of a topic model.},
+  openreview = {oavGZxh6Ac},
+  software = {https://github.com/rdanning/seekvec}
+}
+
+% Submission 23. Source: OpenReview metadata; PDF layout and permissions still require review.
+@InProceedings{xu26a,
+  title = {{Generative Synthetic Data for Causal Inference: Pitfalls, Remedies, and Opportunities}},
+  author = {Xu, Yichen},
+  pages = {40--64},
+  abstract = {Synthetic tabular data are often evaluated by distributional similarity, privacy distance, or train-on-synthetic-test-on-real predictive performance, but these criteria do not ensure validity for causal inference. We show that fully generative tabular synthesizers, including GAN-based and LLM-based models, can preserve predictive utility while distorting average treatment effect (ATE) estimates. The failure is structural: ATE preservation requires both a realistic covariate law and an accurate treatment-effect contrast, whereas prediction loss penalizes treatment-effect error only through an overlap-weighted term. Thus, under imbalance or limited overlap, a generator may reproduce dominant observed outcomes while underlearning intervention-relevant contrasts. We formalize this mismatch through sensitivity and loss-decomposition results. Motivated by this causal analysis and intuition, we propose a hybrid synthetic-data framework for causal inference that generates covariates while modeling treatment and outcome mechanisms separately. We evaluate the framework in three settings: ATE preservation under fully generative versus hybrid synthesis, augmentation for practical positivity problems, and diagnostic simulation engines for comparing OR, IPW, AIPW, and TMLE before real-data analysis. We also stress-test the hybrid construction across settings that vary overlap, covariate dimension, seed sample size, and treatment-effect complexity, including a logistic outcome-model misspecification check. Across controlled simulation experiments, hybrid synthesis improves causal fidelity relative to fully generative baselines; the ACTG application shows improved predictive fidelity and potential for finite-sample estimator benchmarking. LLM-based hybrid synthesis is often more faithful than CTGAN in settings where causal fidelity can be assessed.},
+  openreview = {TJEa5KC7jQ},
+  software = {https://github.com/Xyc-arch/llm-synthetic-for-causal-inference}
+}
+
+% Submission 24. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{li26a,
+  title = {{Segmenting Human-{LLM} Co-authored Text via Change Point Detection}},
+  author = {Li, Mengchu and Zhu, Jin and Li, Jinglai and Shi, Chengchun},
+  pages = {65--91},
+  abstract = {The rise of large language models (LLMs) has created an urgent need to distinguish between human-written and LLM-generated text to ensure authenticity and societal trust. Existing detectors typically provide a binary classification for an entire passage; however, this is insufficient for human--LLM co-authored text, where the objective is to localize specific segments authored by humans or LLMs. To bridge this gap, we propose algorithms to segment text into human-authored and LLM-authored pieces. Our key observation is that such a segmentation task is conceptually similar to classical change point detection in time-series analysis. Leveraging this analogy, we adapt change point detection to LLM-generated text detection, develop a weighted algorithm and a generalized algorithm to accommodate heterogeneous detection score variability, and establish the minimax optimality of our procedure. Empirically, we demonstrate the strong performance of our approach against a wide range of existing baselines. The python implementation of our proposal is available at https://github.com/Mamba413/DetectLLMSegmentation.},
+  openreview = {9QqKEAs1e4},
+  software = {https://github.com/Mamba413/DetectLLMSegmentation}
+}
+
+% Submission 31. Publication metadata verified against PDF.
+@InProceedings{wang26a,
+  title = {{Gene Ontology {DAG}-Aware Conformal {FDR} Control for Multi-Label Protein Function Prediction: A Maize Application}},
+  author = {Wang, Min and Wang, Chong and Liu, Peng},
+  pages = {92--101},
+  abstract = {Protein function prediction is a central task in biological research, where artificial intelligence (AI)-based tools are increasingly used for Gene Ontology (GO) annotation. However, AI predictions are usually reported without statistically interpretable uncertainty measures or error control, which limits the reliability of downstream annotation decisions, especially when predicted functions are used to prioritize proteins for biological follow-up. We develop a general calibration framework for multi-label GO predictors that combines protein-level conformal false discovery rate (FDR) control with GO directed acyclic graph (GO-DAG)-aware losses. The ontology-aware methods include GO-DAG true-path control, which propagates labels to valid ancestors, and GO-DAG near-1 and near-2 losses, which count predictions as acceptable when they are within one or two GO-DAG edges of an observed term. These methods can be applied to any model producing per-protein GO scores and convert those scores into prediction sets with controlled expected protein-level false discovery proportion (FDP). We apply the framework to maize functional annotation as an agricultural genomics example, using an Evolutionary Scale Modeling 2 (ESM-2)-based GO scoring model and comparing the results with a No-DAG direct baseline. In a held-out benchmark evaluation, incorporating GO-DAG structure increased the average number of proteins receiving conformal predictions from 137 under the No-DAG direct baseline to 236 under GO-DAG true-path control and to 314 under GO-DAG near-2 control, while maintaining low protein-level error under the corresponding exact or GO-DAG-aware loss. In a separate application to proteins without retained benchmark labels but with external Gene Ontology Annotation (GOA) evidence available for comparison, protein-wise GOA support increased from 34.3\% under the No-DAG direct baseline to 42.0\% under GO-DAG true-path control and 47.0\% under GO-DAG near-2 control. Although we focus on FDP/FDR, the same conformal structure can accommodate other protein-level losses on multi-label GO-DAG outputs. These results demonstrate that GO-DAG-aware conformal calibration can improve the biological utility of protein function predictions by increasing protein-wise GOA-supported discoveries while maintaining controlled protein-level error in benchmark evaluation.},
+  openreview = {zhUfNvfEbO},
+  software = {https://github.com/ChongWangStat/conformal-go-dag}
+}
+
+% Submission 32. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{tang26a,
+  title = {{Bridging Data Gaps in Oncology: Integrating Large Language Models and Recommendation Systems for Evidence Synthesis}},
+  author = {Tang, Tengjie and Li, Angkai and Bai, Xuanyu and Tan, Xingye and Ji, Qingli and Ulis, Michael and Si, Lu and Bao, Le},
+  pages = {102--112},
+  abstract = {Oncology evidence is fragmented across trials, registries, and publications, limiting evidence synthesis and precision oncology. We used large language models (LLMs) to extract and standardize more than 100,000 cancer trials from ClinicalTrials.gov, scored cancer-treatment interactions using clinical outcomes and trial attributes, and trained three collaborative filtering and hybrid recommendation models. The resulting curated database covers 55 cancer types and 12,049 interventions involving 4,443 drugs. The models achieved cross-validated RMSEs of 0.464--0.680 and generated clinically plausible melanoma and non-small cell lung cancer candidate treatment hypotheses, which were reviewed by oncology experts. These results show that combining LLM-based evidence extraction with recommendation modeling can generate treatment hypotheses across cancer types and support oncology evidence synthesis.},
+  openreview = {or67MercQB},
+  software = {https://github.com/tjtang24/llm-oncology-recommendation}
+}
+
+% Submission 38. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{gao26,
+  title = {{{FACTOR}: Fairness-Aligned Conformal Transport for Optimal Regions}},
+  author = {Gao, Chenyin and Han, Larry},
+  pages = {113--126},
+  abstract = {In high-stakes domains, decisions often hinge on jointly predicting multiple potentially correlated outcomes. Existing methods for multivariate outcomes impose restrictive geometric assumptions, perform poorly with mixed outcomes, and lack subgroup-conditional guarantees, leading to inflated prediction regions and coverage gaps. We propose \textsc{factor}, \emph{Fairness-Aligned Conformal Transport for Optimal Regions}, a framework for constructing compact and fair multivariate prediction regions. \textsc{factor} learns an optimal-transport map to a uniform latent distribution via normalizing flows with input-convex neural networks, inducing a scalar center-outward rank for multivariate outcomes. A post-hoc synchronization step aligns subgroup rank distributions while preserving within-group ordering and provides finite-sample control of empirical subgroup discrepancies. A rank-space band is then selected to reduce estimated average region volume within the candidate family, followed by split-conformal calibration to retain distribution-free marginal coverage. Empirically, on synthetic experiments and six real-world benchmarks, \textsc{factor} consistently achieves target coverage with reduced prediction region volume, minimal subgroup disparities, and competitive runtime relative to state-of-the-art baselines.},
+  openreview = {aYlM08uR9J},
+  software = {https://github.com/Gaochenyin/FACTOR}
+}
+
+% Submission 40. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{xie26,
+  title = {{Online Continual Learning under Real Concept Drift: A Statistical Perspective}},
+  author = {Xie, Haihan and Wang, Yafei and Xie, Jinhan and Li, Lingzhu and Gao, Chao and Jiang, Bei and Kong, Linglong},
+  pages = {127--138},
+  abstract = {Real-world data often exhibit non-stationarity, prompting growing interest in adaptive learning techniques. Continual learning, which aims to sequentially learn multiple tasks, provides a promising framework to address this challenge. However, learning under real concept drift, where the relationship between inputs and outputs evolves over time, remains relatively under explored. In this paper, we propose a novel regularization-based method that incorporates a memory buffer to improve robustness against concept drift. Assuming the existence of a common center for the evolving true models, our method jointly constrains current and past task estimates, effectively bridging them to form a stable estimate that incorporates information across tasks. To further adapt to task variability, we develop an online algorithm that dynamically tunes task-specific regularization parameters. We also provide theoretical guarantees by deriving an error bound that characterizes the overall performance of the estimator, explicitly capturing the effects of task-relatedness, memory buffer size, and regularization strength. Extensive experiments demonstrate that our method achieves superior stability--plasticity trade-offs under varying degrees of task similarity.},
+  openreview = {mVbJHkaIcO}
+}
+
+% Submission 45. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{lian26,
+  title = {{Beyond straight lines: migration costs considering geography enhance tracing human genetic ancestry}},
+  author = {Lian, Jianjun and Python, Andre},
+  pages = {139--149},
+  abstract = {Reconstructing the spatio-temporal history of human genetic lineages is fundamental to understanding human evolution and population distribution. While succinct tree sequences and maximum parsimony reconstruction methods applied to large-scale genomic data have improved our ability to trace the geographic history of genetic ancestry, they have essentially relied on Euclidean distances, which ineluctably ignore opportunity costs that have shaped human mobility patterns since the earliest human migrations and settlement formations. Here we propose an approach to incorporate realistic geographical migration costs through a human movement friction surface. Using simulated data mimicking the dispersal process of human migration out of Africa, we found that, compared to the Euclidean-based benchmark ($\mathcal{M}_0$), the proposed friction-based model ($\mathcal{M}_f$) leads to a more accurate estimation of the geographical origin ($n=346$, accuracy $\mathcal{M}_0=0.18$, $\mathcal{M}_f=0.27$) and genetic flux ($n=30$, MSE $\mathcal{M}_0=0.20$, $\mathcal{M}_f=0.12$) through the Mandeb corridor in the Horn of Africa. We further illustrate these findings in a case study, in which our model seems to better identify plausible human migration paths from Eurasia to the Americas by accounting for geographic factors affecting migration opportunity costs, such as the Alaska Range and Rocky Mountains that represent physical barriers that constraint migration. While important migration drivers such as climate change, technological advances, social organization, and culture remain omitted here, our work highlights the importance of explicitly accounting for geographic constraints to improve our ability to reconstruct past human mobility and, ultimately, understand the evolution of human populations.},
+  openreview = {zGqDGH8zBx},
+  software = {https://github.com/SonOfNewton/geographical_ancestry_inference-paper}
+}
+
+% Submission 51. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{zhai26,
+  title = {{{DEP}-{GAP}: Depth effects correction and lithology type prediction for geophysical inversion data}},
+  author = {Zhai, Yibo and Hou, Yujian and Song, Fangda},
+  pages = {150--163},
+  abstract = {Geophysical inversion is the mathematical process of predicting underground geophysical properties at different depths from wave signals detected on the ground, such as seismic waves. Three-dimensional reconstruction of lithology type based on geophysical inversion data enables determining the optimal drilling location and depth. However, the normalization procedures inherent in geophysical inversion often leads to substantial discrepancies between the inferred geophysical properties and those directly measured from drilled rock samples. As a result, geologists usually have to annotate inversion results manually based on expert knowledge. These discrepancies, which can vary with depth even for the same lithology type, will further hamper manual annotation. To address these challenges, we develop an unsupervised hierarchical Bayesian model to cluster different lithology types, correct the depth effects automatically, and finally recover the 3D geological structures from inversion data. Our model also incorporates spatial continuity of the lithology type distribution. We develop a Monte Carlo Markov Chain algorithm for posterior inference and validate our approach through extensive simulation studies. Finally, we predict the lithology type distribution of an oil base located in east-northern China, and the lithology type predictions based on the inversion data are highly consistent with that those obtained from drilling samples.},
+  openreview = {2JAAtMdV3V},
+  software = {https://github.com/BoboLearnGCN/DEP-GAP}
+}
+
+% Submission 57. Source: OpenReview metadata; PDF layout and permissions still require review.
+@InProceedings{wang26b,
+  title = {{{KPOTD}: Kernel Principal Optimal Transport Directions for Nonlinear Sufficient Dimension Reduction}},
+  author = {Wang, Peize and Jiang, Wenhao and Meng, Cheng},
+  pages = {164--175},
+  abstract = {Nonlinear sufficient dimension reduction (SDR) is a fundamental tool for identifying complex low-dimensional structures that preserve the conditional distribution of a response variable. Existing nonlinear SDR paradigms primarily rely on inverse conditional moments, large margins, or deep learning. However, these approaches often struggle with highly symmetric distributions, focus on localized boundaries, or lack statistical interpretability. In this paper, we propose a new framework named Kernel Principal Optimal Transport Directions (KPOTD). By integrating optimal transport into the RKHS, KPOTD constructs a displacement covariance operator that aligns probability measures globally. This approach allows the method to robustly untangle complex nonlinear manifolds and achieve linear separability in the latent space. Computationally, KPOTD reduces the infinite-dimensional functional optimization to a finite-dimensional generalized eigenvalue problem. Theoretically, we investigate the properties of the KPOTD operator and rigorously establish its unbiasedness and exhaustiveness. These results guarantee the exact recovery of the central subspace without relying on restrictive classical assumptions. Extensive numerical simulations and real-data applications demonstrate that KPOTD consistently outperforms existing methods and maintains high stability even in the presence of high-dimensional noise.},
+  openreview = {NLnQ19D0Qe}
+}
+
+% Submission 59. Publication metadata verified against PDF.
+@InProceedings{guo26,
+  title = {{Beyond Importance: Interchange-Sobol Sensitivity Reveals Task-Specific Content Channels in Transformer Components}},
+  author = {Guo, Yifeng and Du, Jin-Hong and Chen, Xiang},
+  pages = {176--210},
+  abstract = {Mechanistic interpretability methods summarize a transformer component by a single importance score, conflating two distinct roles: a component may matter because it transports task-relevant content, or because the forward computation degrades when its contribution is removed. We introduce \emph{Interchange-Group Sobol Decomposition} (IGSD), a paired-intervention framework that compares matched activation replacement with zero ablation on the same component, estimates two Sobol-style variance indices, and uses their signed difference to separate the two roles, with intervention validity monitored by a symmetric off-manifold diagnostic $\widehat{\mathrm{ST}} > 1$. In factual recall, IGSD identifies an early-layer content channel in both GPT-2 small and Qwen2.5-1.5B that standard importance methods underestimate. A controlled subject and relation donor design shows that the early channel transports relation-frame content while late attention transports subject-retrieval content, refining at head granularity to the known $\mathrm{Attn}_{L9H8}$ head. Late-layer clamping confirms that the early signal is expressed through downstream transformations rather than residual pass-through. These results show that replacement and deletion are not interchangeable controls and their divergence provides a practical statistical diagnostic for content transport in transformer components.},
+  openreview = {MVlySJMWhw},
+  software = {https://github.com/gyf9712/igsd}
+}
+
+% Submission 60. Publication metadata verified against PDF.
+@InProceedings{yao26,
+  title = {{Calibrated Cross-Modal Prediction of Single-Cell Transcriptomes from Histology Images}},
+  author = {Yao, Jia and Zhou, Qin and Shi, Wenqi and Yang, Yuqiu and Buhaya, Munir and Jiang, Yi and Wang, Tao and Xie, Yang and Huang, Emina and Xiao, Guanghua},
+  pages = {211--229},
+  abstract = {Contrastive vision-language recipes optimise embedding geometry but produce no likelihood, while single-cell generative models fit a proper count likelihood but ignore the image. We argue the objective worth optimising is not raw point accuracy but a calibrated probabilistic transcript prediction usable for downstream biological inference. We present Image2Transcript, a single end-to-end model that couples a ViT-B/16 image encoder and a transformer gene encoder with a zero-inflated negative binomial (ZINB) head, trained under a joint contrastive, Smooth-L1 alignment, and ZINB-NLL negative-log-likelihood objective. On a 29- slide, 3.89M-cell Xenium cohort with a leakage-safe slide-group split, the model achieves per-cell Pearson 0.5368 on a frozen 640,928-cell test set (+0.087 over a matched frozen-ViT ridge baseline; within 0.017 of the strongest MSE variant, which is marginally better on point prediction but yields no likelihood), with calibrated per-gene zero-rates (r= 0.956, MAE 0.028) that no point regressor can produce. Swapping three pathology foundation encoders (Phikon2, Prov-GigaPath, UNI2-h) into the same ridge head reaches at most rcell = 0.497, identifying the multimodal objective, not the backbone, as the load-bearing factor. Without retraining, it transfers to TCGA-COAD H\&E and correlates with overall survival, vital status, and recurrence under a calibrated patient-shuffle null that correctly rejects gender as a negative control; on HEST-Bench, the same encoder leads on 4 of 5 cancer types (macro-average 0.400 vs. 0.269 for the second best baseline).},
+  openreview = {LyfvLyj6PY},
+  software = {https://github.com/yaober/image2transcripts}
+}
+
+% Submission 61. Publication metadata verified against PDF.
+@InProceedings{zheng26,
+  title = {{Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System}},
+  author = {Zheng, Tian and Hsu, Kai-Tai},
+  pages = {230--239},
+  abstract = {Agentic data analysis systems produce rich outputs, including code, numerical results, and verbal diagnostics. This makes them more challenging to evaluate than single-turn LLM responses. It is therefore necessary to distinguish genuine disagreement between an agent's output and a ground-truth answer from grading artifacts. We investigate how reliably automated graders assess such a system and what strategies improve grading quality by applying LAMBDA, a multi-agent data-analysis system, on $153$ numerical QRData tasks from DSGym. We develop and evaluate a three-layer human-AI grading cascade: strict regex matching, LLM-based lenient grading, and snippet-based human inspection, which combines non-GenAI and GenAI strategies with different failure profiles. Both automated graders achieve $100\%$ observed precision (0/70 false positives). The lenient grader's recall is $97\%$ against human labels. A keyword-anchored extraction pipeline raises the strict grader's recall by $60$ percentage points over a last-number heuristic; the lenient grader is architecturally parser-independent. An iterative nudge mechanism raises grading run success from $36\%$ to $97\%$ and lenient-pass rates from $16\%$ to $46\%$; comparing nudging with and without original-question re-injection shows that re-injection offers no benefit, confirming the nudge as an answer template cue. We further observe in this case study that variable type is the task metadata field most consistently associated with grading pipeline dynamics and observed outcome grades.},
+  openreview = {N20spyvQHy},
+  software = {https://github.com/TZstats-Columbia/STAI-X-Grade-The-Grader/}
+}
+
+% Submission 65. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{zhang26a,
+  title = {{Adaptive Kernel Density Estimation with Pre-training}},
+  author = {Zhang, Ruitong and Deng, Ke},
+  pages = {240--250},
+  abstract = {Density estimation in high-dimensional settings is an important and challenging statistical problem.Traditional methods based on kernel smoothing are inefficient in high dimensions due to the difficulties in specifying appropriate location-adaptive kernels. In this work, we introduce pre-training, a key idea behind many cutting-edge AI technologies, to the context of non-parametric density estimation. By establishing a pre-trained neural network that can recommend an appropriate location-adaptive kernel for each sample point, efficient density estimation with adaptive kernels is achieved in high dimensions. A wide range of numerical experiments show that this strategy is highly effective for improving density-estimation accuracy, when the target distribution is close to the distribution family for pre-training. When the target distribution is substantially different from the pre-training distribution family, the benefit from the proposed pre-training strategy may be diluted, but can be reactivated by an additional fine-tuning procedure.},
+  openreview = {ZNlIFiPt3x}
+}
+
+% Submission 70. Source: OpenReview metadata; PDF layout and permissions still require review.
+@InProceedings{liu26a,
+  title = {{Symbolic Density Estimation for Discrete Distributions}},
+  author = {Liu, Ziwen and Li, Meng},
+  pages = {251--263},
+  abstract = {Discrete probability laws underpin statistical modeling, yet the catalog of interpretable distributions has expanded only gradually through centuries of case-by-case mathematical derivations. We introduce symbolic density estimation (SDE), an unsupervised framework that automatically recovers closed-form probability mass functions by composing elementary analytic operations within a structured search space. Our method integrates domain-specific structural priors with evolutionary search and a validity-aware inference stage, and it extends to richer distribution families such as zero inflation and finite mixtures. To support systematic evaluation and future research, we contribute a benchmark dataset spanning a broad collection of commonly used discrete distributions. The proposed algorithm recovers all benchmark families with accurate parameter estimates. A real data application shows that it identifies concise and interpretable mixture models that improve goodness-of-fit over standard models.},
+  openreview = {2K0pHu9HAv},
+  software = {https://github.com/ZiwenLiu2002/SDE-Code}
+}
+
+% Submission 71. Publication metadata verified against PDF.
+@InProceedings{xu26b,
+  title = {{A {Wasserstein} Framework for Abnormal Batch Detection in Streaming Data under Distributional Heterogeneity}},
+  author = {Xu, Chenqin and Yao, Yisha},
+  pages = {264--274},
+  abstract = {Data streams are common in online learning and modern AI systems, where the training data arrives in sequential batches. However, abnormal data batches caused by corruption, adversarial manipulation, or annotation errors can degrade model reliability and learning performance. Detecting such abnormal batches is particularly challenging under natural distributional variability, where genuine anomalies are entangled with normal batch-to-batch heterogeneity. Existing methods suffer from major limitations: gradient-based and loss-based methods are sensitive to stochastic noise, robust-statistics methods rely on restrictive assumptions, and two-sample testing methods collapse historical batches into a single reference distribution, thereby failing to capture the natural heterogeneity among regular batches. We propose a new framework for abnormal batch detection in streaming data. Unlike existing approaches that operate on Euclidean data points, our method treats data batches as distribution-valued random objects in Wasserstein space. We employ Wasserstein Spatial Depth to quantify batch centrality and further transform the depth values into empirical p-values, yielding a nonparametric and distribution-adaptive measure of abnormality. The resulting procedure offers a statistically interpretable mechanism to detect abnormal batches relative to a population of naturally varying regular batches. Theoretical analysis establishes the p-value interpretation of the proposed measure and its associated two-stream distributional inference framework. Numerical experiments and real-data studies demonstrate that the proposed method consistently outperforms several popular anomaly-detection approaches and can be effectively integrated into online learning procedures such as online stochastic gradient descent.},
+  openreview = {M3O8DiEmqf},
+  software = {https://github.com/Shelton-CQ-Xu/wsd-batch-detection}
+}
+
+% Submission 72. Source: OpenReview metadata; PDF layout and permissions still require review.
+@InProceedings{chen26a,
+  title = {{Wahkon: A Statistically Principled Deep {RKHS} Superposition Network}},
+  author = {Chen, Yongkai and Zhong, Wenxuan and Ma, Ping},
+  pages = {275--294},
+  abstract = {Deep learning excels at prediction but often lacks finite-sample guarantees and calibrated uncertainty; RKHS (Reproducing Kernel Hilbert Space)-based methods provide those guarantees but struggle to adapt in high dimensions. We propose Wahkon, a deep RKHS superposition network that unifies Kolmogorov's superposition principle with RKHS regularization in the smoothing-spline tradition of Wahba. This yields a finite-dimensional \emph{deep representer theorem} that makes training tractable and provides explicit layerwise complexity control. We show the penalized estimator is exactly the MAP (maximum a posteriori) estimate under a hierarchical Gaussian-process prior, extending the spline/GP duality to deep compositions. {Leveraging the Bayesian interpretation, we develop the predictive inference with the conditional last-layer posterior with a conformal-style calibration, yielding prediction intervals with competitive widths.} Using metric-entropy arguments, we establish minimax-optimal convergence rates under mild smoothness and clarify how depth and width trade off with regularity. Empirically, Wahkon outperforms multilayer perceptrons, Neural Tangent Kernels, and Kolmogorov--Arnold Networks across simulation benchmarks and a single-cell CITE-seq study. By unifying Kolmogorov's superposition principle with RKHS regularization, Wahkon delivers accuracy, interpretability, and statistical rigor in a single framework.},
+  openreview = {pbHIU8XWtM},
+  software = {https://github.com/StatCYK/Wahkon}
+}
+
+% Submission 78. Source: OpenReview metadata; PDF layout and permissions still require review.
+@InProceedings{chen26b,
+  title = {{TabSODA: Tabular Diffusion based Imputation with Skip Pattern Detection and Ordinal Awareness}},
+  author = {Chen, Yuyu and Kim, Taehyo and Shu, Hai and Feng, Yang},
+  pages = {295--306},
+  abstract = {Missing data imputation in large-scale surveys faces two challenges that are not well handled by current tabular diffusion methods. First, structural skips, cells made inapplicable by questionnaire design, should not be imputed but are often conflated with item nonresponse. Second, ordinal responses encode ordered categories, yet most pipelines treat them as nominal levels through one-hot or analog-bit encodings. We introduce TabSODA (Tabular diffusion with Skip pattern detection and Ordinal Awareness), an Expectation--Maximization (EM)-based diffusion imputer built on the Elucidated Diffusion Model (EDM) framework. TabSODA propagates structural skips through the denoising loss and reverse-time sampler, and represents ordinal variables with cumulative-probit scalar latents while retaining analog-bit encodings for nominal variables. When a codebook skip mask is available, TabSODA uses it directly; otherwise, the TabSODA+SKIP variant estimates the mask from raw responses and questionnaire order using a CART-based skip-pattern miner. On the Population Assessment of Tobacco and Health (PATH) study and the National Survey on Drug Use and Health (NSDUH), two nationally representative U.S.\ surveys, TabSODA reduces ordinal MACE by up to 29.1\% (relative) and improves categorical accuracy by up to 11 percentage points over the strongest baseline across MCAR, MAR, and MNAR masking. The skip miner achieves near-perfect precision on PATH and high precision on NSDUH, allowing TabSODA+SKIP to recover much of the codebook-mask benefit. The code is available at https://github.com/rubychan299/TabSODA.},
+  openreview = {kJJF5qK8T1},
+  software = {https://github.com/rubychan299/TabSODA}
+}
+
+% Submission 80. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{lu26a,
+  title = {{Robust Empirical Risk Minimization from a Single Dependent Trajectory: Non-Asymptotic Theory under Infinite Variance}},
+  author = {Lu, Jianya and Pan, Bo and Wang, Yafei and Xu, Lihu and Jiang, Bei and Kong, Linglong},
+  pages = {307--317},
+  abstract = {We study robust empirical risk minimization from a single dependent trajectory, a central setting in dynamic risk management, adaptive control, and reinforcement learning. The key difficulty is the simultaneous presence of serial dependence and extreme-risk observations: dependence reduces the effective sample size, while heavy tails can cause standard empirical risk minimization to suffer from poor deviation control and high sensitivity to extreme observations. Existing robust learning theory largely treats heavy tails under independence and often bounded variance conditions, leaving a gap for modern sequential decision-making problems where observations are serially correlated and can exhibit infinite-variance behavior. We close this gap by introducing a logarithmically truncated estimator for heavy-tailed trajectory data. Under mixing and stationary conditions, we establish high-probability excess-risk guarantees that explicitly quantify the joint effects of temporal dependence and tail heaviness. The resulting rate demonstrates that blocking can recover marginal-tail-driven learning behavior up to dependence-induced logarithmic factors. As practical implications, we derive guarantees for downstream applications, including regression under autoregressive dependence and linear dynamical system identification. Numerical experiments show that the proposed estimator remains stable in regimes where standard methods break down.},
+  openreview = {aLpe5cCADC}
+}
+
+
+% Submission 89. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{carlotti26,
+  title = {{Density-Informed Pseudo-Counts for Calibrated Evidential Deep Learning}},
+  author = {Carlotti, Pietro and Gligi{\'c}, Nevena and Farahi, Arya},
+  pages = {318--345},
+  abstract = {Evidential Deep Learning (EDL) is a popular framework for uncertainty-aware classification that models predictive uncertainty via Dirichlet distributions parameterized by neural networks. Despite its popularity, its theoretical foundations and behavior under distributional shift remain poorly understood. In this work, we provide a principled statistical interpretation by proving that EDL training corresponds to amortized variational inference in a hierarchical Bayesian model with a tempered pseudo-likelihood. This perspective reveals a major drawback: standard EDL conflates epistemic and aleatoric uncertainty, leading to systematic overconfidence on out-of-distribution inputs. To address this, we introduce Density-Informed Pseudo-count EDL, a new parametrization that decouples class prediction from the magnitude of uncertainty by separately estimating the conditional label distribution and the marginal covariate density. This separation preserves evidence in high-density regions while shrinking predictions toward a uniform prior for out-of-distribution data. Theoretically, we prove that our method achieves asymptotic concentration. Empirically, we show that our method enhances interpretability and improves robustness and uncertainty calibration under distributional shift.},
+  openreview = {VFuUBbRINX},
+  software = {https://github.com/NevenaGligic/DIP-EDL}
+}
+
+% Submission 91. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{tang26b,
+  title = {{Conditional-Independence-Regularized Distributional Autoencoders for Mixed-Type Data}},
+  author = {Tang, Siyuan and Xu, Gongjun and Zhu, Ji},
+  pages = {346--356},
+  abstract = {Mixed-type data containing both numerical and categorical variables arise in many scientific and real-world applications. Existing representation learning and generative modeling approaches typically focus either on reconstruction accuracy or unconditional data generation, but often fail to recover the full conditional distribution of the data while preserving interpretable structural relationships between heterogeneous variable types. In this work, we introduce Conditional-Independence-Regularized Distributional Autoencoders, a framework for learning low-dimensional representations of mixed-type data through conditional distribution matching and structural regularization. Our method combines an energy-score-based objective for numerical variables, a likelihood-based objective for categorical variables, and an auxiliary conditional independence regularization term encouraging the learned representation to capture the dependence between numerical and categorical components. We provide theoretical analysis showing that the optimal representation balances unexplained numerical variability, conditional entropy of categorical variables, and residual conditional dependence. Empirically, the proposed method achieves strong performance on both synthetic and real-world datasets, substantially improving categorical distribution recovery, achieving competitive overall conditional distribution recovery, and preserving mixed-type dependence structure.},
+  openreview = {d6Hu1PGphr},
+  software = {https://github.com/siyuat-ui/Conditional-Independence-Regularized-DAE-public}
+}
+
+% Submission 93. Publication metadata verified against PDF.
+@InProceedings{zhang26b,
+  title = {{Enrichment learning approach to calibrate epigenetic clocks with higher-resolution {DNA} methylation arrays}},
+  author = {Zhang, Yahui and Song, Peter X. K.},
+  pages = {357--365},
+  abstract = {Biological aging is a complex physiological process beyond what chronological age can capture. Built upon DNA methylation (DNAm) profiles, epigenetic clocks estimate biological age reflective of molecular changes over cellular evolution, which have gained popularity in aging research. Most existing clocks are developed using DNAm data from the Illumina 450K array, which appears unsuitable for studies with DNAm data collected from the higher-resolution 850K EPIC array. A common practice in cross-platform analyses is to restrict calculations to shared CpGs of existing clocks, which discards substantial information and loses age prediction accuracy. To address this gap, we use a neural network architecture to develop an enrichment learning framework that calibrates the existing clock trained on lower-resolution DNAm data to be adaptive to higher-resolution data. We illustrate the proposed method using the childhood and adolescent cohort dataset consisting of 601 samples with ages ranging from 8 to 18 years. The proposed enrichment learning improves the prediction accuracy of epigenetic age compared with the conventional methods that directly apply existing 450K-based clocks. Our neural network modeling framework provides a scalable and generalizable methodology to calibrate existing epigenetic clocks to achieve better adaptiveness for population heterogeneity and advances in DNAm platform technology.},
+  openreview = {DBHVBbqPwI},
+  software = {https://github.com/Yahui-Z/enrichment-learning}
+}
+
+% Submission 97. Publication metadata verified against PDF.
+@InProceedings{chen26c,
+  title = {{{SSP}-Ensemble: A Sufficient Subspace Projection Ensemble for Multiclass Classification}},
+  author = {Chen, Jiafeng and Meng, Cheng and Wang, Peize and Zhang, Jingyi and Zhu, Jun},
+  pages = {366--377},
+  abstract = {High-dimensional multiclass classification is challenging since the discriminative information is often concentrated in low-dimensional structures, while many observed variables are irrelevant or noisy. In particular, different class pairs may depend on different informative directions, making a single global representation insufficient for capturing all local discriminative structures. Random subspace and random projection ensembles address this issue by aggregating classifiers trained on multiple low-dimensional views, thereby improving stability. However, because these views are typically generated randomly, they may fail to preserve label-relevant information. To address the above limitations, we propose the sufficient subspace projection ensemble, abbreviated as SSP-Ensemble, for high-dimensional multiclass classification. For each class pair, SSP-Ensemble learns two supervised projection bases, and combines them to form a pairwise sufficient representation. Probabilistic weak learners are then trained on these pairwise representations, and their class probability estimates are aggregated to produce the final multiclass prediction. We provide a theoretical analysis showing that, under a pairwise hierarchical SDR condition, the pairwise representations preserve the posterior probabilities used in aggregation. We further show that the classification risk of SSP-Ensemble is controlled by the pairwise subspace-estimation errors and the weak-learner log-loss regrets, which implies Bayes consistency when the sufficient subspaces and weak learners are consistently estimated. Simulation studies and real-data experiments demonstrate that SSP-Ensemble performs competitively against random projection and other popular classifiers.},
+  openreview = {gle2Vco7vE}
+}
+
+% Submission 101. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{li26b,
+  title = {{A Deep Generative Framework for Right-Censored Survival Data with Distribution-Matching Regularization}},
+  author = {Li, Yanran and Cai, Zexi},
+  pages = {378--397},
+  abstract = {Recovering the marginal failure-time distribution is difficult when censoring is informative because the observed data do not identify the relationship between failure time $T$ and censoring time $C$ without additional structure. We pursue marginal $T$ recovery by modeling $(T,C\mid Z)$ with a joint conditional flow. Two monotone flows represent the failure and censoring distributions. Under informative censoring, a one-dimensional shared-latent structure represents their dependence and is integrated out during training. We combine the censored likelihood with a differentiable Soft--Nelson--Aalen Wasserstein regularizer, which compares the empirical survival curve with a curve constructed from a model-generated population. In four independent-censoring simulations with $51\%$--$77\%$ censoring, the joint conditional flow remains comparable to deep $T$-only baselines on marginal $T$ recovery. In the shared-frailty experiment at $\rho=1$, it obtains $T$-KS $0.039$, compared with $0.057$ for the study-specific deep-copula comparison and $0.048$ for the Kaplan--Meier reference line. Across the informative-censoring mechanisms studied, it has lower $T$-KS than the evaluated deep generative baselines; improvement over Kaplan--Meier occurs in the frailty-type settings. The generative formulation enables paired $(T,C)$ sampling and population-level distribution matching; the empirical evaluation focuses on marginal failure-time recovery.},
+  openreview = {TOpHjU1kR9},
+  software = {https://github.com/Lyric98/JCF-DM}
+}
+
+% Submission 102. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{tian26,
+  title = {{GAttNHP: Group Attention Neural Hawkes Process for Extrapolation Reasoning in Temporal Knowledge Graphs}},
+  author = {Tian, Xiangni and Yu, Kaixian and Dai, Runpeng and Tang, Niansheng and Zhu, Hongtu},
+  pages = {398--416},
+  abstract = {Temporal Knowledge Graphs (TKGs) record how facts evolve over time, but forecasting future events on a TKG remains difficult for three reasons: (i) long-range temporal dependencies are hard to encode; (ii) events on different chains mutually excite or inhibit one another in ways that snapshot-level models cannot express; and (iii) inter-arrival times are heavy-tailed and statistically sparse, so deterministic time predictors are unreliable. We address these three issues with a single framework, the $\textbf{Group Attention Neural Hawkes Process (GAttNHP)}$, built around three matched components. First, a self-attention encoder casts each subject--relation chain as a continuous-time point process and captures the lingering excitation of distant history. Second, a semantic soft-grouping module turns globally learnable Hawkes priors into an analytical cross-attention mask, so chains share excitation patterns through their latent group memberships rather than through exhaustive pairwise computation. Third, a Non-Crossing Quantile (NCQ) regression head replaces mean-based time prediction, providing calibrated, monotonically ordered quantile estimates that remain stable under heavy-tailed inter-arrival distributions. On six benchmark TKG datasets, GAttNHP improves over state-of-the-art baselines on both entity prediction and time prediction, and ablations confirm that its largest gains arise on the long-tail event chains where existing models fail most severely.},
+  openreview = {mDZHXdDdAF},
+  software = {https://github.com/txn146/GAttNHP-main}
+}
+
+% Submission 105. Source: OpenReview metadata; PDF layout and permissions still require review.
+@InProceedings{sun26,
+  title = {{Distance-Based Empirical {Bayes}: A Nonparametric B-Spline Approach using Integral Probability Metrics}},
+  author = {Sun, Jian and Zhao, Zhigen},
+  pages = {417--445},
+  abstract = {We propose a nonparametric empirical Bayes framework that estimates the prior distribution using B-spline expansions and optimizes it via integral probability metrics (IPMs), including Maximum Mean Discrepancy (MMD) and the 1-Wasserstein distance. By directly matching empirical and model-implied marginal distributions, the method avoids likelihood-based fitting and provides improved robustness to heavy tails, skewness, and model misspecification, while retaining a flexible and interpretable spline structure. We establish consistency of the estimated prior and posterior under general conditions using a sieve-based analysis. Simulations across a range of likelihood families show that the proposed method achieves lower posterior mean squared error and improved prior recovery compared to existing empirical Bayes approaches, particularly in challenging regimes. A real-data application further demonstrates improved uncertainty quantification, highlighting the effectiveness of IPM-based empirical Bayes for large-scale inference.},
+  openreview = {ZH0KObp5dv},
+  software = {https://github.com/sunjian0422/ipmeb}
+}
+
+% Submission 115. Publication metadata verified against PDF.
+@InProceedings{tang26c,
+  title = {{The {ATLAS} Penalty: Auxiliary-Transformed Location-Aware Smoothing with Applications to Spatial Transcriptomics}},
+  author = {Tang, Qian and Chi, Eric C. and Wang, Wenyi},
+  pages = {446--465},
+  abstract = {We address the problem of fitting a collection of location-specific models under a spatial smoothness assumption. Existing approaches penalize roughness in the model parameters directly, an assumption that breaks down when smoothness is a function of parameters and auxiliary covariates rather than the parameters themselves. Our framework, the Auxiliary-Transformed Location-Aware Smoothing (ATLAS) penalty, generalizes spatial smoothness by penalizing roughness in transformations of model parameters using auxiliary information. As a concrete case study, we develop a spatially smooth deconvolution model for spatial transcriptomics that estimates tumor mixing coefficients from thousands of spots distributed on a single tissue slide. To handle the computational challenges posed by the nonlinear likelihood, nonsmooth nonconvex penalty, and spatially coupled estimation, we propose an alternating direction method of multipliers (ADMM) algorithm. Through simulation studies, we demonstrate that our framework provides substantially better spatial domain detection than approaches that smooth model parameters directly, with particularly strong gains when auxiliary covariates carry calibrated spatial structure.},
+  openreview = {n5VvlyCIT5}
+}
+
+% Submission 116. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{liu26b,
+  title = {{Transformers as Provable Approximators of Sparse Principal Component Analysis}},
+  author = {Liu, Qinyan and Chen, Yan and Wen, Canhong},
+  pages = {466--476},
+  abstract = {Transformer architectures exhibit remarkable expressive power, enabling them to approximate diverse iterative algorithms in supervised and semi-supervised settings. However, their capabilities for fully unsupervised tasks remain largely unexplored, particularly in high-dimensional and noisy regimes where structured sparsity and spectral estimation are critical. Sparse Principal Component Analysis (Sparse PCA, or SPCA) is a fundamental high-dimensional unsupervised problem, where classical solvers such as the Truncated Power Method (TPower) provide strong guarantees but require careful initialization and sparsity tuning. In this work, we show that TPower provides a constructive algorithmic template for multi-layer Transformers to implement SPCA. Under a noisy spiked covariance model, we derive approximation and generalization guarantees decomposing total error into algorithmic approximation and statistical estimation. Beyond the constructive theory, the Transformer formulation suggests practical advantages such as amortized inference and parallel batch processing. Empirical studies on synthetic and real-world high-dimensional datasets show that Transformers trained with unsupervised objectives can recover sparse structures at levels comparable to classical SPCA baselines in the reported settings. Our results provide one of the first rigorous characterizations of Transformer architectures for noisy unsupervised sparse spectral estimation, with empirical validation in high-dimensional settings.},
+  openreview = {nxvwCY73m1}
+}
+
+% Submission 119. Publication metadata verified against PDF.
+@InProceedings{yu26,
+  title = {{Global Average Treatment Effects for Individualized Randomization Experiments with Aggregate Data}},
+  author = {Yu, Shuguang and Li, Ting and Lu, Yuchen and Shi, Chengchun and Zhou, Fan and Zou, Zhichao and Zhen, Peng and Zhu, Hongtu},
+  pages = {477--504},
+  abstract = {Individualized randomized experiments are central to online platforms for optimizing personalized decisions in complex environments. In two-sided markets, however, standard treatment effect estimation is often invalid due to strong temporal and cross-unit interference, a challenge compounded when only aggregated data are available because of privacy or system constraints. To address these issues, we identify the Global Average Treatment Effect (GATE) using only group-level data from treatment and control groups. We first establish identification conditions based on aggregated observations, and then propose the Individualized Randomized Experiment Varying Coefficient Decision Process (IRE-VCDP) model, which accounts for interference through supply--demand dynamics. Building on this framework, we develop a complete procedure for estimation and statistical inference of the GATE, along with theoretical guarantees for the proposed test. Extensive simulations and real-world experiments using data from a leading ridesharing platform demonstrate the effectiveness of our approach.},
+  openreview = {W1tQttnJvy}
+}
+
+% Submission 120. Publication metadata verified against PDF.
+@InProceedings{li26c,
+  title = {{Optimal Auditing of Sequential Decision Systems under Dynamical Constraints}},
+  author = {Li, Zhenghan and Bi, Xuan and Ding, Jie},
+  pages = {505--514},
+  abstract = {How can we audit an AI system before it is safe or practical to deploy? This question is difficult because historical operational logs, generated by a behavior policy, may fail to cover the states visited by the target policy. We study this problem by proposing a hybrid auditing framework that combines fixed operational logs, generated by a behavior policy, with a small number of actively collected audit trials. We formulate probe design as a constrained convex optimization problem that minimizes the mismatch between the combined sampling distribution and the distribution induced by the target policy. The resulting probe allocates trials toward audit blind spots, namely regions frequently visited by the target policy but poorly covered by operational logs. Then, we develop an iterative algorithm that estimates the environment dynamics and distribution induced by the target policy from data while refining the probe design. Theoretically, we prove that minimizing this mismatch bounds the estimator's mean squared error and asymptotic variance. Experiments on GridWorld and LunarLander environments show that the proposed method substantially outperforms baseline methods.},
+  openreview = {hQhtkaWgkY}
+}
+
+% Submission 122. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{vossler26,
+  title = {{{STAVAT}: Stratified Anytime-Valid Atom Sampling for {LLM} Tier Placement}},
+  author = {Vossler, Patrick and Xia, Fan and Feng, Jean},
+  pages = {515--526},
+  abstract = {Multi-judge LLM benchmarks are costly because each candidate LLM must answer a fixed set of questions and each response is scored by several LLM judges. The standard approach to benchmarking a candidate reveals the scores for all entries of an $N \times J$ matrix corresponding to $N$ questions and $J$ judges. While full-matrix evaluation is natural, many uses of benchmarks reduce to \textit{tier placement}, in which the full-matrix mean is compared to a prespecified cutpoint, e.g., deciding whether a model clears a deployment cutoff. Because tier placement can often be accomplished without obtaining every score in the matrix, we introduce STAVAT, a stratified anytime-valid atom sampling procedure for certifying the same tier that full multi-judge evaluation would assign. STAVAT combines three ingredients that each improve cost efficiency: (i) e-processes for sampling without replacement, (ii) adaptive sampling across stratifications of benchmark questions, and (iii) atom sampling, which defines the basic sampling unit as a single judge--question entry rather than the full judge panel for a single question. Across 74 candidates and five benchmarks, STAVAT reduces judge calls by $13$-$41$\% compared to the standard approach.},
+  openreview = {I8z8nlZGve},
+  software = {https://github.com/patrickvossler18/STAVAT}
+}
+
+% Submission 123. Source: OpenReview metadata; PDF layout and permissions still require review.
+@InProceedings{roy26,
+  title = {{Optimal Self-Distillation for Rectified Flow via Linear Probing}},
+  author = {Roy, Saptarshi and Mukherjee, Debepsita and Patil, Pratik},
+  pages = {527--555},
+  abstract = {Modern generative models are increasingly trained using model-generated signals, creating both opportunities for self-improvement and risks of collapse. We study optimal self-distillation (SD) for rectified flow (RF): given a suboptimal teacher velocity field, can a student trained on a mixture of true RF velocities and teacher velocities provably improve the teacher? For linear RF with ridge regularization on fixed interpolation pairs, we prove an exact affine path identity, derive the optimal mixing coefficient in closed form, and show strict improvement in integrated velocity risk whenever the teacher risk is nonstationary along the regularization path. The optimal coefficient obeys a sign rule: positive mixing corrects under-regularized teachers, while negative mixing corrects over-regularized teachers. We also give one-shot generalized cross-validation (GCV) and validation tuning procedure that avoids grid search over mixing weights and repeated refitting. Combining this theorem with RF Wasserstein convergence bounds, we show that optimal self-distillation improves the velocity estimation terms controlling continuous-time and finite-step generation error. Experiments with Gaussian models, Gaussian mixtures, and image data show that optimal self-distillation improves velocity risk, mode recovery, and finite-step generation relative to both the teacher and pure distillation.},
+  openreview = {WIws1paMUU}
+}
+
+% Submission 124. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{bose26,
+  title = {{{VADR}: Variance Adjusted Distribution Regression}},
+  author = {Bose, Soumyabrata},
+  pages = {556--572},
+  abstract = {Distribution regression predicts a scalar response from distribution-valued covariates, typically observed as grouped individual-level samples. Tree-based methods naturally capture sparse, low-order interactions in tabular data, but integrating decision trees against discrete empirical measures produces empty leaves and severe attenuation bias when the per-group sample sizes are small. We introduce Variance Adjusted Distribution Regression (VADR), which replaces the discrete empirical measure with a continuous, variance-regularised density estimator built from two steps: Gaussian smoothing of the axis-aligned tree leaves, followed by empirical Bayes shrinkage toward a global pooled estimate. The smoothed leaf masses are analytic and always positive, eliminating zero-inflation entirely, while the shrinkage borrows statistical strength across groups and stabilises the local variance. We prove that this dual-resolution estimator strictly dominates the standard empirical plugin in finite-sample mean squared error under a simple bias--variance condition, and that the resulting fractional posterior provides an explicit finite-risk guarantee even in the extreme sparse-bag regime with bounded per-group samples; in the dense regime it recovers the near-minimax rate for sparse additive regression. Experiments on synthetic data and a voting-behaviour application demonstrate the practical advantages of VADR.},
+  openreview = {YrHrQYQBqr}
+}
+
+% Submission 126. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{cen26,
+  title = {{Learning Perturbations to Extrapolate Your {LLM}}},
+  author = {Cen, Zetai and Gu, Chenfei and Zhu, Jin and Li, Ting and Chen, Yunxiao and Shi, Chengchun},
+  pages = {573--585},
+  abstract = {Recent advancements in large language models demonstrate that injecting perturbations can substantially enhance extrapolation performance. However, current approaches often rely on discrete perturbations with fixed designs, which limits their flexibility. In this work, we propose a framework where token prefixes are perturbed by a learnable transformation of a continuous latent vector within an embedding space. To overcome the challenge of an intractable marginal likelihood, we derive unbiased estimating equations for model parameters and optimize them via stochastic gradient descent. We establish the statistical properties of the resulting estimator in over-parameterized regimes. Empirical evaluations on both synthetic and real-world datasets demonstrate that our proposal yields significant gains in out-of-domain settings over a range of state-of-the-art baseline methods.},
+  openreview = {WJnisMlO14}
+}
+
+% Submission 128. Publication metadata verified against PDF.
+@InProceedings{patil26,
+  title = {{Vector Summary Pseudo Posteriors for Simulation-Based Inference with Applications to Cosmology}},
+  author = {Patil, Pratik and Rose, Jonah and Garcia, Alex and Chen, Min and Torrey, Paul and Farahi, Arya},
+  pages = {586--610},
+  abstract = {Simulation-based inference often compares simulator output with low-dimensional summaries when likelihoods are unavailable. Such summaries can make inference fast and interpretable, but they also determine what is identified: a pseudo posterior may concentrate on a parameter set rather than a point. We introduce Vector Summary Pseudo Posteriors (VSPP), a generalized Bayes framework that weights simulator parameters by the mismatch between simulated residual summaries and a target vector defined relative to a reference relation. When exact matching is possible, adding informative summaries produces nested identified sets; under misspecification, VSPP targets the best matching parameters. We show that local identification is governed by the rank of the population mismatch map, while recovery from a finite simulation bank improves when summaries better separate the truth from competing candidates. As a concrete example, we use residual mean and second raw moment summaries, which distinguish parameter values that match a mean relation but differ in residual dispersion. Synthetic examples show how added summaries shrink ridges and manifolds; in a nonlinear benchmark, adding the second moment moves the pseudo posterior closer to the exact posterior. In cosmological simulation studies, VSPP improves held-out parameter recovery in CAMELS IllustrisTNG and reduces residual moment mismatch in generated DREAMS samples for Milky Way--mass systems.},
+  openreview = {LzYgyxUOPM}
+}
+
+% Submission 130. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{lu26b,
+  title = {{NeuroMAS: Multi-Agent Systems as Neural Networks with Joint Reinforcement Learning}},
+  author = {Lu, Haoran and Fang, Luyang and Zhong, Wenxuan and Ma, Ping},
+  pages = {611--623},
+  abstract = {Multi-agent language systems are often built as hand-designed workflows, where agents are assigned semantic roles and communication protocols are specified in advance. We propose NeuroMAS, a framework that treats a multi-agent language system as a trainable and scalable neural-network-like architecture with hidden textual intermediate signals. In NeuroMAS, language-agent nodes are role-free but structure-aware: the topology determines how information can flow, while reward-based training determines how nodes communicate, specialize, and coordinate. This formulation shifts multi-agent design from workflow engineering toward architecture design, where depth, width, connectivity, and growth protocol become scalable sources of capability. We provide a theoretical perspective showing why such modular text-valued computation can be parameter-efficient when tasks admit stable decompositions. Experiments show that NeuroMAS improves over both inference-time collaboration methods and trained baselines, and that its gains are not explained by trainable parameter count alone. We further find that organizational scaling is path-dependent: larger systems can fail when trained from scratch, but become stronger when grown progressively from smaller trained systems. These results suggest that learned multi-agent organization is a promising scaling axis for language-model reasoning and generation.},
+  openreview = {psCz7NClif}
+}
+
+% Submission 143. Unresolved checks are listed in editorial/issues.csv.
+@InProceedings{wang26c,
+  title = {{CrossHONA: Cross-species HOmologous and Non-homologous gene-aware framework for transcriptomics integration and Annotation.}},
+  author = {Wang, Ruohan and Zhu, Yu and Gao, Zixiao and Ma, Ying},
+  pages = {624--635},
+  abstract = {Single-cell RNA sequencing (scRNA-seq) and spatial transcriptomics (ST) enable high-resolution characterization of cellular heterogeneity across species. However, existing cross-species integration and annotation methods primarily rely on homologous genes, thereby overlook non-homologous genes that may encode species-specific biological information. Here, we present CrossHONA, a multi-stage deep learning framework for cross-species integration and annotation of scRNA-seq and ST data. CrossHONA jointly models homologous and non-homologous genes in a unified embedding space, enabling it to capture both conserved and species-specific biological signals. Across multiple scRNA-seq and ST benchmarks, CrossHONA consistently outperforms existing methods in integration and cell type annotation, achieving relative improvement of 11\%-145\%. Gradient-based interpretability analyses further show that both conserved homologous and species-specific genes contribute to cell-type annotation, and that CrossHONA-derived inter-species similarity patterns recapitulate known phylogenetic relationships. Together, CrossHONA provides an interpretable and flexible framework for cross-species transcriptomic analysis beyond homologous gene matching, with an accompanying agent-based interface to improve accessible and reproducibility. Our code is available at https://github.com/YMa-lab/CrossHONA.git.},
+  openreview = {hZqR47CiBp},
+  software = {https://github.com/YMa-lab/CrossHONA.git}
+}
